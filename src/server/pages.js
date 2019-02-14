@@ -55,7 +55,6 @@ pages
   .add('order', '/:parentCollectiveSlug?/:collectiveType(events)?/:collectiveSlug/orders/:OrderId([0-9]+)')
   .add('discover', '/discover');
 
-
 // Contribute Flow
 // ---------------
 
