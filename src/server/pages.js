@@ -18,7 +18,6 @@ pages
   .add('subscriptions_redirect', '/subscriptions', 'subscriptions-redirect')
   .add('search', '/search')
   .add('hosts', '/hosts')
-  .add('pricing', '/pricing')
   .add('createHost', '/:collectiveSlug/connect/stripe')
   .add('button', '/:collectiveSlug/:verb(contribute|donate)/button')
   .add('createEvent', '/:parentCollectiveSlug/events/(new|create)')
@@ -121,11 +120,7 @@ pages
 // Marketing Pages
 // ---------------
 
-pages.add(
-  'marketing',
-  '/:pageSlug(become-a-sponsor|how-it-works|gift-of-giving|gift-cards|gift-cards-next)',
-  'marketingPage',
-);
+pages.add('marketing', '/:pageSlug(become-a-sponsor|how-it-works|gift-of-giving|gift-cards|pricing)', 'marketingPage');
 
 // Collective
 // ----------
