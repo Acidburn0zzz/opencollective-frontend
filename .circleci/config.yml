@@ -17,6 +17,7 @@ jobs:
           key: cache-{{ checksum "package.json" }}
           # Find the most recently generated cache used from any branch
           key: cache-
+
       - run: sudo apt -y update
       - run: sudo apt -y install postgresql-client
       # Cypress dependencies
@@ -25,22 +26,25 @@ jobs:
       - run: sudo apt -y install libnotify-dev
       - run: sudo apt -y install libgconf-2-4 libnss3 libxss1
       - run: sudo apt -y install libasound2 xvfb
+
       - run: npm ci
+
       - run: npm run build:clean
       - run: npm run build:updates
       - run: npm run build:server
       - run: npm run build:next
+
       - run: ./scripts/setup_circleci.sh
+
       - save_cache:
           key: cache-{{ checksum "package.json" }}
           paths:
-            - ./node_modules
             #  This is where we store Cypress binary
             - ../.cache #
             # This is where we store the opencollective-api
             - ../cache
             # This is the global npm cache
-            - /root/.npm
+            - ../.npm
 
       - run: npm run test
       - store_test_results:
