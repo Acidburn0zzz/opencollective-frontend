@@ -42,7 +42,7 @@
     "graphql": "14.1.1",
     "graphql-request": "1.8.2",
     "graphql-tag": "2.10.1",
-    "html-pdf": "2.2.0",
+    "html-pdf": "3.0.1",
     "intl": "1.2.5",
     "jsonwebtoken": "8.4.0",
     "load-script": "1.0.0",
